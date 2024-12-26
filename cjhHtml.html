@@ -8,13 +8,39 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+
+    @font-face {
+        font-family: 'HakgyoansimDunggeunmisoTTF-B';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-B.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+            font-family: 'Cafe24Ssurround';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 </style>
-<style> 
+<style>
     * {
-        font-family: "IBM Plex Sans KR", serif;
+        /* font-family: "IBM Plex Sans KR"; */
+        font-family: "Cafe24Ssurround";
+    }
+
+    a {
+        text-decoration-line: none;
+    }
+
+    .home {
+        color: black;
+        font-weight: bold;
+
     }
 
     .wrap {
@@ -27,7 +53,7 @@
 
     #myImg {
         width: 280px;
-        margin: auto 50px auto auto;
+        margin: 28px 50px auto 55px;
         border-radius: 15px;
     }
 
@@ -36,11 +62,16 @@
     }
 
     #myCont {
-        margin: 20px auto auto 20px;
+        margin: 55px auto auto 20px;
     }
 
-    .myInfo {
-        margin: auto auto 10px auto;
+    #myCont>p {
+        font-size: 38px;
+        font-family: "HakgyoansimDunggeunmisoTTF-B";
+    }
+
+    #myInfo {
+        margin: 42px auto 10px auto;
     }
 
 
@@ -53,7 +84,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: auto 18px 5px auto;
+        margin: 100px 18px 5px auto;
+    }
+
+    #velog {
+        background-color: #29BF8C;
+        color: white;
+        text-decoration-line: none;
     }
 
     .title {
@@ -62,15 +99,28 @@
         text-align: center;
     }
 
-    header {
-        background-color: #e6f4f1;
+    .sumTitle{
+        margin: 30px 10px 15px 55px;     
+        font-size: 33px;
+        /* text-align: center; */
     }
+
+    .subPlan{
+        margin: auto 10px 35px 55px;   
+    }
+
+    header {
+        background-color: #EBFBFF;
+    }
+    
 
     .teamName {
         width: auto;
         height: 170px;
-        text-align: center; /* 이 요소의 가로 공간을 기준으로 텍스트를 가운데 정렬시킴 */                
-        background-color: #e6f4f1;
+        text-align: center;
+        background-color: #EBFBFF;
+        font-family: 'HakgyoansimDunggeunmisoTTF-B';
+        font-size: 80px;
     }
 
     .topBox {
@@ -78,10 +128,9 @@
         height: 400px;
     }
 
-    .subBox {
-        width: auto;
+    .subBox {        
         height: 400px;
-        display: none;
+        width: 80%;
         /* background-color: #e6f4f1; */
     }
 
@@ -92,10 +141,8 @@
     }
 
     .middleNav {
-        /* background-color: red; */
-        border-width: 0 0 1px;
-        border-color: black;
-        border-style: solid;
+        width: 80%;
+        margin: 20px 0px 0px 0px;
     }
 
     img {
@@ -115,6 +162,16 @@
         $("#hobby").hide();
     }
 
+    const triggerTabList = document.querySelectorAll('#myTab button')
+    triggerTabList.forEach(triggerEl => {
+        const tabTrigger = new bootstrap.Tab(triggerEl)
+
+        triggerEl.addEventListener('click', event => {
+            event.preventDefault()
+            tabTrigger.show()
+        })
+    })
+
 </script>
 </head>
 
@@ -128,55 +185,84 @@
                     </svg>
                 </a>
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="nav-link px-2 text-bg-dark">HOME</a></li>
+                    <li><a href="#" class="home">HOME</a></li>
                 </ul>
             </div>
         </div>
         <div class="teamName">
-            <h1>1321</h1>
+            1321
         </div>
     </header>
     <div class="wrap">
         <div class="topBox">
-            <div class="title">
-                <h2> About Me</h1>
-            </div>
             <div class="">
                 <div class="aboutBox" id="myImg">
-                    <img src="../cjhRep/src/img/git.png" class="img-thumbnail" alt="...">
+                    <img src="../cjhRep/src/img/1.jpg" class="img-thumbnail" alt="...">
                 </div>
                 <div class="aboutBox" id="myCont">
-                    <div class="myInfo">이름 : 최지혜</div>
-                    <div class="myInfo">거주지 : 인천시 부평구</div>                    
-                    <div class="myInfo">MBTI : INTP</div>
-                    <div class="myInfo">각오 : 잘 마무리하자!</div>
+                    <p>
+                        안녕하세요. <br>
+                        최지혜입니다. 잘부탁드립니다!
+                    </p>
                     <br>
                     <a href="https://github.com/cjh0412">
                         <div class="circle"><img src="../cjhRep/src/img/git.png"></div>
                     </a>
                     <a href="https://velog.io/@jyedev/posts">
-                        <div class="circle"
-                            style="background-color: #29BF8C; color: white; text-decoration-line: none;"><b>velog</b>
+                        <div class="circle" id="velog"><b>velog</b>
                         </div>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="middleNav">
-            <ul class="list-group list-group-horizontal">
-                <li class="list-group-item" onclick="onHobby()">목표</li>
-                <li class="list-group-item" onclick="onPlan()">계획</li>
+        <div class="subBox">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <a  href="#myImg">
+                    <li class="nav-item" role="presentation" id="label_about">
+                        <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                            type="button" role="tab" aria-controls="home-tab-pane" aria-selected="false">About</button>
+                    </li>
+                </a>
+
+                <a  href="#plan">
+                    <li class="nav-item" role="presentation" id="label_plan">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                            data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane"
+                            aria-selected="false"> Plan</button>
+                    </li>
+                </a>
             </ul>
-        </div>
-        <div class="subBox" id="hobby">
-            <h2 class="title">부트캠프에서</h2>
-            <h2 class="title">부트캠프 마치고</h2>
-           
-        </div>
-        <div class="subBox" id="plan">           
-            <h2 class="title">부트캠프에서</h2>
-            <h2 class="title">부트캠프 마치고</h2>
-            <h2 class="title">갖추고 싶은 스택</h2>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                    <div class="aboutBox" id="myImg">
+                        <img src="../cjhRep/src/img/2.jpg" class="img-thumbnail" alt="...">
+                    </div>
+                    <div id="myInfo" class="aboutBox">
+                        <p><b>이름 :</b> 최지혜</p>
+                        <p><b>거주지 :</b> 인천시 부평구</p>
+                        <p><b>MBTI :</b> INTP</p>
+                        <p><b>각오 :</b> 부트캠프 성실히 마무리하기</p>
+
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                    <div class="sumTitle" id="plan">단기계획</div>
+                    <ul class="subPlan">
+                        <li> 팀 프로젝트 성실히 임하기</li>
+                        <li> 깃 사용 익숙해지기</li>
+                    </ul>
+                    <div class="sumTitle">장기계획</div>
+                    <ul class="subPlan">
+                        <li> 1일 1 알고리즘 이상 풀기</li>
+                        <li> 매일 TIL 작성하기</li>
+                    </ul>
+                    <div class="sumTitle">목표</div>
+                    <ul class="subPlan">
+                        <li> Aws를 이용하여 프로젝트 배포</li>
+                        <li> 원하는 회사 입사</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
     <div class="footBox">
